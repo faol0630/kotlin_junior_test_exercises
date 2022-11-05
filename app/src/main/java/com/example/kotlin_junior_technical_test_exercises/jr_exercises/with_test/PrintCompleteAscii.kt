@@ -10,11 +10,9 @@ class PrintCompleteAscii {
     private var list = IntArray(256)
 
     fun printAscii(){
-//        list.indices.forEach{ i ->
-//            println("$i = ${i.toChar()}")
-//        }
-        for (i in list){
+        list.indices.forEach{ i ->
             println("$i = ${i.toChar()}")
         }
+
     }
 }

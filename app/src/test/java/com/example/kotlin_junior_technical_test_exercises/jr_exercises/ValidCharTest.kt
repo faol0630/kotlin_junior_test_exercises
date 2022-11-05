@@ -190,30 +190,3 @@ class GetCharacterCodeTest{
         assertEquals(false, result)
     }
 }
-
-//valid number es una class con un metodo llamado check que filtra con un if si
-// el valor ingresado es un entero.no acepta double,ni otro tipo de variable.
-// devuelve true si el numero entero ingresado esta entre 0 y 9.si es mayor que 9,
-// menor que 1 o es una letra devuelve false
-
-//add es una clase que llama por parametro a valid number.contiene una funcion que hace
-//suma de dos enteros pero antes de sumar los filtra usando el parametro validNumber:
-//if(validNumber.check(a) && validNumber.check(b)){ return a + b}
-//aca valid number es un parametro de Add.
-
-//como valid number es lo que se pasa por parametro en Add, para testear add se
-//hace un Mock de valid number.(mirar video 39)
-
-//mirar video 42 para ver los valores por defecto (valores nice) que Mockito le
-// da a las variables. si es boolean es false, si es entero es cero, si es colecciones
-// es empty o null.para controlar esto se usa `when`:
-//`when` (validNumber!!.check(3)).thenReturn(true)
-//en este caso si no se hace con when el metodo mockeado va a traer un false porque es
-//su respuesta por defecto.
-
-//si se quiere usar el metodo real y no el mockeado se usa :
-//`when`(validNumber.check(3).thenCallRealMethod()
-//esto testea el parametro 3 con el metodo real.por lo tanto en este caso devuelve true.
-//si pasamos otro numero diferente a 3 el test no pasa porque no hemos hecho el when
-//correspondiente.ejemplo:
-//assertEquals(true, validNumber.check(4)) //esto dara error
